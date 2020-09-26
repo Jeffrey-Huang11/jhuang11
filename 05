@@ -1,3 +1,5 @@
+# Write a program that will print the name of a randomly-selected student from team (orpheus, rex, or endymion)
+# Import random to use 'random.choice' function, which goes through a list and randomly selects an element 
 import random 
 
 KREWES = {
@@ -6,5 +8,5 @@ KREWES = {
     'endymion': ['JASON', 'DEAN', 'MADDY', 'SAQIF', 'CINDY', 'YI LING', 'RUOSHUI', 'FB', 'MATTHEW', 'MAY', 'ERIN', 'MEIRU']
 }
 
-# Write a program that will print the name of a randomly-selected student from team (orpheus, rex, or endymion).
 print(random.choice(random.choice(list(KREWES.values()))))
+# Gets the values (groups) from KREWES, declares them as lists, randomly chooses a list, then randomly chooses a name, prints
