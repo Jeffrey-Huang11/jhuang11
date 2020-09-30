@@ -1,5 +1,9 @@
-# Write a program that will print the name of a randomly-selected student from team (orpheus, rex, or endymion)
-# Made by Jeffrey Huang, Dragos Lup, & Ryan Ma
+# Team Rising Drago (Jeffrey Huang, Dragos Lup, & Ryan Ma)
+# SoftDev
+# K05 -- Teamwork, but Better This Time/ went through a dictionary, randomly selected a
+# key/group and randomly selected a "name" from the key/group
+# 2020-09-30
+
 # Import random to use 'random.choice' function, which goes through a list and randomly selects an element
 import random
 
