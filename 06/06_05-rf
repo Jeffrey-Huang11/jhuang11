@@ -9,5 +9,6 @@ KREWES = {
     'endymion': ['JASON', 'DEAN', 'MADDY', 'SAQIF', 'CINDY', 'YI LING', 'RUOSHUI', 'FB', 'MATTHEW', 'MAY', 'ERIN', 'MEIRU']
 }
 
-print(random.choice(random.choice(list(KREWES.values()))))
+rand_team = random.choice(list(KREWES))
+print(random.choice(KREWES[rand_team]))
 # Gets the values (groups) from KREWES, declares them as lists, randomly chooses a list, then randomly chooses a name, prints
