@@ -1,8 +1,7 @@
 # Team JIA (Jeffrey Huang, Amelia Chin, Ishita Gupta)
 # SoftDev
 # K06 -- Learnination Through Amalgamation/Combined team members' code from K05
-# Made a rand_team variable that is a random team from the dictionary
-# Lastly prints out a random name from the team
+# Made a rand_team variable that is a random team from the dictionary, and prints out a random name from the team
 # 2020-09-30
 import random
 
