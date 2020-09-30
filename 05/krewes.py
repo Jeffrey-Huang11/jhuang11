@@ -1,5 +1,5 @@
 # Write a program that will print the name of a randomly-selected student from team (orpheus, rex, or endymion)
-# Made by Jeffrey Huang, Dragos Lup, Ryan Ma
+# Made by Jeffrey Huang, Dragos Lup, & Ryan Ma
 # Import random to use 'random.choice' function, which goes through a list and randomly selects an element
 import random
 
