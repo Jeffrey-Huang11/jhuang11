@@ -1,6 +1,9 @@
-# Write a program that will print the name of a randomly-selected student from team (orpheus, rex, or endymion)
-# Made by Jeffrey Huang, Amelia Chin, Ishita Gupta
-# Import random to use 'random.choice' function, which goes through a list and randomly selects an element
+# Team JIA (Jeffrey Huang, Amelia Chin, Ishita Gupta)
+# SoftDev
+# K06 -- Learnination Through Amalgamation/Combined team members' code from K05
+# Made a rand_team variable that is a random team from the dictionary
+# Lastly prints out a random name from the team
+# 2020-09-30
 import random
 
 KREWES = {
@@ -9,6 +12,8 @@ KREWES = {
     'endymion': ['JASON', 'DEAN', 'MADDY', 'SAQIF', 'CINDY', 'YI LING', 'RUOSHUI', 'FB', 'MATTHEW', 'MAY', 'ERIN', 'MEIRU']
 }
 
+# Chooses a random team/key from the dictionary [orpheus, rex, endymion]
 rand_team = random.choice(list(KREWES))
+
+# Prints a random name from the rand_team
 print(random.choice(KREWES[rand_team]))
-# Gets the values (groups) from KREWES, declares them as lists, randomly chooses a list, then randomly chooses a name, prints
