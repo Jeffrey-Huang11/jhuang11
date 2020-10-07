@@ -1,0 +1,16 @@
+# Team Tiny Elephant (Jeffrey Huang, Erin Lee, Jonathan Lee)
+# SoftDev
+# K08 -- Cross Pollination and Virtual Insanity (Task Alpha)
+# As a team, we visited the workshops of other students (including those of our team) and
+# observed their assignment K07. We took note of how other teams approached the
+# assignment, whether they used the csv or random library, whether they had a large quantity
+# of code that could have been simplified, etc.
+# 2020-10-06
+
+OBSERVATIONS
+- Many groups used csv libraries (like the reader)
+- A lot of people used DictReader to decipher/filter their dictionaries
+- Some print statements ended up with a lot of jam packed code/information that was not easily decipherable. Others had more clean and readable code by splitting their information/lines into variables!!
+- Function for printing out the job based on weighted percentages is either: using random.choices function or brute forces its way
+- The random choice and randrange were used in the same contexts to accomplish the same things, though the choice method was far more streamlined.
+- To get rid of the first and last statements, teams popped keys/values in the dictionary at the end to remove the header and total, OR they used if statements, OR they used for loops for a certain range.

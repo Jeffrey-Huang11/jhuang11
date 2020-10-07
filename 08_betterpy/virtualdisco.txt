@@ -1,0 +1,26 @@
+# Team Tiny Elephant (Jeffrey Huang, Erin Lee, Jonathan Lee)
+# SoftDev
+# K08 -- Cross Pollination and Virtual Insanity (Task Beta)
+# We tested out the command line in Terminal, and also looked up the command and the usage for virtual
+# environments online, reading/looking at both the official Python guide/docs as well as supplementary ones.
+# 2020-10-06
+
+ python3 -m venv ~/myherozero   
+
+This command creates a virtual environment (virtualenv or in the command, “venv”),
+which is a self-contained, separate instance of Python runtime environment that has
+its own packages or setup. The “myzerohero” is the created directory that stores the
+supported files for the virtual environment, the library, and the Python interpreter/instructions.
+Upon activating the virtual environment in the terminal (source myherozero/bin/activate),
+the terminal will change the prompt to one of the virtual environments, using its specific
+Python installation/version.
+
+The need to create a virtual environment is to allow the user to avoid installing Python packages
+globally (some projects requiring one version of Python and another requiring a different version,
+having only one version prevents both from working). By creating a venv, the user can switch between
+environments when working on projects that require different packages.
+
+Sources:
+https://docs.python.org/3.4/tutorial/venv.html
+https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/#:~:text=virtualenv%20is%20used%20to%20manage,system%20tools%20or%20other%20projects.
+https://pythonbasics.org/virtualenv/
