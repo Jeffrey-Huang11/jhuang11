@@ -1,0 +1,23 @@
+# Team Tiny Elephant (Jeffrey Huang, Erin Lee, Jonathan Lee)
+# SoftDev
+# K09 -- Simple Path to Greatness
+# We examined the app.py code and how certain lines functioned/resulted after running it, which we did through creating the virtual environment. After creating a venv and running the code, we jotted down the results and cleared up any misconceptions we had. Learned how to create a venv and activate it.
+# 2020-10-08
+
+Q0: It looks somewhat similar to functions in many other languages, Java being the most recent example we went over, with "__name__" being the parameter passed into a function/method.
+
+Q1: "/" in CS generally refers to the root directory. In website URLs, slashes are also used to separate subcategories/subpages, with the initial "/" at the end of the main URL marking the home page of the site (for example, https://github.com/).
+
+Q2: This print command will end up in the root of the current directory? It will print the name of the current app?
+
+Q3: It will end up/printed in the terminal?
+
+Q4: In java, you use the "." and the "()" to call an object’s method, such as words.length(), where the part preceding the . is the object (words) and the part after is the function name (length). Though run() isn’t identified in this code, it also seems to be a method for the object of the app.
+
+Notes (after running the Flask app):
+The app is running on 127.0.0.1:5000
+> The terminal has a log of any actions done on the server where app.py is running (ie. reloading the page will > > print 127.0.0.1 - - [07/Oct/2020 15:23:44] "GET / HTTP/1.1" 200 -
+> "No hablo queso!" is printed on the webpage itself and NOT the terminal
+> It's put in the body of the HTML file that's being output
+> __main__ is printed in the terminal as a result of the print (__name__) command
+> "__name__" seems to be a special variable which gets the current name of the module.
