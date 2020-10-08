@@ -1,4 +1,3 @@
-print(5)
 from flask import Flask
 app = Flask(__name__) # Q0: Where have you seen similar syntax in other langs?
 
