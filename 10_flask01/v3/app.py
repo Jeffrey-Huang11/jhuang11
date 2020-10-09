@@ -13,3 +13,8 @@ def hello_world():
 
 app.debug = True
 app.run()
+
+#Line 10 prints "about to print __name__..." in the terminal
+#Line 11 prints “__main__” in the terminal
+#Line 12 prints "No hablo queso!" in the webpage
+#Line 14 will enable the debugging mode
