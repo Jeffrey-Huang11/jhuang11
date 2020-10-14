@@ -1,0 +1,15 @@
+# Team Tiny Elephant (Jeffrey Huang, Erin Lee, Jonathan Lee)
+# SoftDev
+# K12 -- ...or the Only Constant is Change?
+# Looked at the flask-jinja project, made some predictions on the outcome of rendering the model_tmplt.html page, and recorded notes on the actual outcome as well as the questions on routing and the render_template function.
+# 2020-10-15
+
+Predictions: Going to my_foist_template on the server will print out each element in the collection onto the browser as it iterates.
+Actual outcome: The home page http://127.0.0.1:5000/ has “No hablo queso!” displayed. The page of my_foist_template contains the title fooooo, {{ foo }} was replaced by fooooo. The body shows the list of numbers separated by line breaks
+
+> Q0: What happens if you remove render_template from this line?
+> It will return this error: “NameError: name 'render_template' is not defined” in the browser and the Flask command line/terminal
+> Q1: Can all of your teammates confidently predict the URL to use to load this page?
+> Yes, localhost:5000/my_foist_template, or 127.0.0.1:5000/my_foist_template, since the app route is ("/my_foist_template")
+> Q2: What is the significance of each argument?
+> Each of the arguments are passed into the rendering of the model_tmplt.html file. The first parameter is the name of the file, foo gets the string “fooooo” as the title of the webpage, and collection gets the list declared in line 12.
