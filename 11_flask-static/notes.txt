@@ -1,0 +1,13 @@
+# Team Tiny Elephant (Jeffrey Huang, Erin Lee, Jonathan Lee)
+# SoftDev
+# K11 -- Some Things Never Change
+# Looked at the flask-static project, made predictions, and recorded the actual outcomes and our responses to the questions.
+# 2020-10-15
+
+> Predictions: We predicted that the two links would render the txt file and html file for static/foo and static/foo.html in the browser, respectively.
+> Actual Outcome: Upon actually testing it out, the static/foo does not render any sort of webpage, and instead downloads the file to your computer
+> Q: What happens when you access this file via http://localhost:5000/static/foo?
+> Going to static/foo downloads the foo.txt file, and continues to stay on the root page
+> the root page shows “No hablo queso” as usual
+>Q: What happens when you access this file via http://localhost:5000/static/foo.html?
+> Going to static/foo.html renders the HTML page in the static directory, which has “this here some plaintext tho”
