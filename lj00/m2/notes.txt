@@ -1,7 +1,41 @@
-Team Unhelpables (Jeffrey Huang, Dean Carey, Matthew Hui)
+Jeffrey Huang
 SoftDev
 LJ00: Le Voyage de Learnination avec Mongo, Première Phase
 2020-10-29
+-------------------------------------------------------------------
+STORING DATA
 
--
-- 
+JSON - JavaScript Standard Object Notation
+Start and Ends with: { }
+Separate each KEY and VALUE with a colon ':'
+Separate each KEY:VALUE pair with a comma ','
+KEYS must be surrounded by ""
+KEYS = FIELDS in MongoDB
+Pros: Friendly, Readable, Familiar
+Cons: Text-based, Space-Consuming, Limited Data Types
+
+BSON - Binary JSON (Binary representation)
+Additional data types than JSON
+Readable by computer only (since binary)
+
+MongoDB stores data in BSON, but viewed in JSON
+-------------------------------------------------------------------
+IMPORTING AND EXPORTING DATA
+
+EXPORT (commands)
+> mongodump --uri "<Atlas Cluster URI>"
+  Exports in BSON
+> mongoexport --uri "<Atlas Cluster URI>"
+              --collection=<collection name>
+              --out=<filename>.json
+  Exports in JSON
+
+IMPORT (commands)
+> mongorestore --uri "<Atlas Cluster URI>"
+               --drop dump
+  Exports in BSON
+> mongoimport --uri "<Atlas Cluster URI>"
+              --drop=<filename>.json
+  Exports in JSON
+-------------------------------------------------------------------
+FIND COMMAND
