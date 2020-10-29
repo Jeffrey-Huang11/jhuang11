@@ -1,4 +1,4 @@
-Team Unhelpables (Jeffrey Huang, Dean Carey, Matthew Hui)
+Jeffrey Huang
 SoftDev
 LJ00: Le Voyage de Learnination avec Mongo, Première Phase
 2020-10-29
