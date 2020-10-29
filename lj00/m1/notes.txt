@@ -3,5 +3,15 @@ SoftDev
 LJ00: Le Voyage de Learnination avec Mongo, Première Phase
 2020-10-29
 
-- 
--
+Document - a way to organize and store data as a set of field-value pairs
+{
+  <field> : <value>
+  <field> : <value>
+  <field> : <value>
+}
+Collection - many documents
+Database - multiple collections
+
+Instance - single machine running software
+Cluster - group of servers that store your data
+Replica Set - multiple machines storing same data to prevent any losses
