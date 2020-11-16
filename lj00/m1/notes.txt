@@ -16,3 +16,5 @@ Instance - single machine running software
 Cluster - group of servers that store your data
 Replica Set - multiple machines storing same data to prevent any losses
 -------------------------------------------------------------------
+user: m001-student
+pass: m001-mongodb-basics
