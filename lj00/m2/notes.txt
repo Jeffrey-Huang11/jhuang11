@@ -39,3 +39,14 @@ IMPORT (commands)
   Exports in JSON
 -------------------------------------------------------------------
 FIND COMMAND
+> show dbs
+> use <database>
+> show collections
+
+> db.<collection_name>.find(<query>)
+*shows only 20 documents
+to show more, type "it" (iterate)
+> db.<collection_name>.find(<query>).count()
+*returns number of documents in a given query
+> db.<collection_name>.find(<query>).pretty()
+*displays the documents in a readable way
