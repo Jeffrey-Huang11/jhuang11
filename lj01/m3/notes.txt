@@ -1,0 +1,31 @@
+Team 9+1 (Jeffrey Huang, Johnathan Lee, and Kelly Huang)
+SoftDev
+LJ01: Le Voyage de Learnination avec Mongo, Deuxième Phase
+2020-11-12
+-------------------------------------------------------------------
+INSERTING NEW DOCUMENTS
+
+{"_id":"<value>"}
+*every doc MUST have unique _id field
+ObjectId() - default _id value created unless specified
+"_id": ObjectId("342bi3roqd")
+"_id": "2423bfwef8"
+
+> db.<collection_name>.findOne()
+*pulls a random document
+
+> db.<collection_name>.insert({document})
+*inserts a document to the collection
+
+Identical documents can be stored as long as different _id values
+Inserting an identical document with the same _id will result in error
+Inserting an identical document w/o an _id value will work, the document will just have a randomly generated _id
+
+> db.<collection_name>.insert([ { "test": 1 }, { "test": 2 }, { "test": 3 } ])
+*inserts 3 different documents with the use of []
+
+> db.<collection_name>.insert([{ "_id": 1, "test": 1 },{ "_id": 1, "test": 2 },{ "_id": 3, "test": 3 }],{ "ordered": false })
+*inserts the documents w/o order so all errors will be shown
+*default ordered insertion can cause some documents to be lost since an error will terminate the process
+
+inserting documents into a non-existent collection will create the collection
