@@ -28,4 +28,34 @@ Inserting an identical document w/o an _id value will work, the document will ju
 *inserts the documents w/o order so all errors will be shown
 *default ordered insertion can cause some documents to be lost since an error will terminate the process
 
-inserting documents into a non-existent collection will create the collection
+inserting documents into a non-existent collection will create the new collection
+
+-------------------------------------------------------------------
+UPDATING DOCUMENTS
+
+> db.<collection_name>.updateOne()
+*updates the first document found in a given query
+
+> db.<collection_name>.updateMany()
+*updates all documents found in a given query
+
+>> {"$inc": {<field>:<increment_amount>, <field2>:<increment_amount>}}
+*increments the value of a specified field by a given amount
+
+>> {"$set": {<field>:<new_value>, <field2>:<new_value>}}
+*updates the value of a specified field to the new_value
+
+>> {"$push": {<field>:<value1>, <field2>:<value2>}
+*adds a new element to an array
+
+-------------------------------------------------------------------
+DELETING DOCUMENTS & COLLECTIONS
+
+> db.<collection_name>.deleteOne()
+*deletes the first document that match a given query
+
+> db.<collection_name>.deleteMany()
+*deletes all documents that match a given query
+
+> db.<collection_name>.drop()
+*removes the collection
