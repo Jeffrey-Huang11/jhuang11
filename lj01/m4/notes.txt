@@ -3,3 +3,33 @@ SoftDev
 LJ01: Le Voyage de Learnination avec Mongo, Deuxième Phase
 2020-11-12
 -------------------------------------------------------------------
+QUERY OPERATORS: COMPARISON
+
+Provide additional ways to locate data within the database
+"$" proceeding operator
+
+{ <field>: { <operator> : <value> }}
+> $eq  = equal to
+> $neq = not equal to
+> $gt  = greater than
+> $lt  = less than
+> $gte = greater than or equal to
+> $lte = less than or equal to
+
+ex: { "tripduration": { "$lte" : 70}}
+*$eq is the default operator when an operator is not specified
+
+-------------------------------------------------------------------
+QUERY OPERATORS: LOGIC
+
+{ <operator> : [{statement1}, {statement2},...]}
+> $and = returns document matching all query clauses
+> $or  = returns document if at least one clause is matched
+> $nor = returns document if failed to match both clauses
+
+{ $not: {statement}} *NO QUOTATIONS
+> $not = returns all documents that don't match the query
+
+*$and is the default operator when an operator is not specified
+
+ex: db.zips.find({ "pop": { "$gt": 5000, "$lt": 1000000 }}).count()
