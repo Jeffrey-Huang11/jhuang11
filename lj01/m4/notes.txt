@@ -33,3 +33,21 @@ QUERY OPERATORS: LOGIC
 *$and is the default operator when an operator is not specified
 
 ex: db.zips.find({ "pop": { "$gt": 5000, "$lt": 1000000 }}).count()
+
+-------------------------------------------------------------------
+QUERY OPERATORS: EXPRESSIVE
+
+$expr allows the use of aggregation expression within the query language
+{ $expr: { <expression> } }
+$expr allows us to use variables and conditional statements
+
+$ denotes the use of an operator
+$ also addresses the field value
+ex: db.trips.find({ $expr: {"$eq": ["$start station id","$end station id"]}})
+
+-------------------------------------------------------------------
+QUERY OPERATORS: ARRAYS
+
+{ <array_field>: {"$all": []}} shows all documents with all elements listed in the array, order does not matter
+
+{ <array_field>: {"$size": <number>}} shows all documents with exactly 20 elements in he array
