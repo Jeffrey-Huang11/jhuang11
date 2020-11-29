@@ -51,3 +51,24 @@ QUERY OPERATORS: ARRAYS
 { <array_field>: {"$all": []}} shows all documents with all elements listed in the array, order does not matter
 
 { <array_field>: {"$size": <number>}} shows all documents with exactly 20 elements in he array
+
+-------------------------------------------------------------------
+ARRAY OPERATORS AND PROJECTION
+
+Projection: 2nd part of find() command
+Only include the specified fields in the result
+
+> db.<collection>.find({ <query> }, { <field1>: 1, <field2>: 1 })
+1 - include the field
+0 - exclude the field
+*can only use one or the other
+*{"_id": 0} is an exception to the rule above
+
+{"array": {"$elemMatch": {"element": {condition}}}}
+*shows the element of the array that matches the condition
+
+-------------------------------------------------------------------
+ARRAY OPERATORS AND SUBDOCUMENTS
+
+Dot notation is used to go beyond the surface fields in a documents
+> db.<collection>.find({"field1.field2.field3": "value"})
