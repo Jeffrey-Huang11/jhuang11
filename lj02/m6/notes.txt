@@ -1,0 +1,18 @@
+Team 9+1 (Jeffrey Huang, Johnathan Lee, and Kelly Huang)
+SoftDev
+LJ02: Le Voyage de Learnination avec Mongo, Troisième Phase
+2020-11-25
+-------------------------------------------------------------------
+ATLAS FEATURES - MORE DATA EXPLORER
+
+Performance Advisory
+Aggregation Builder
+Anti-Pattern Advisory
+Advanced Text Search
+
+Realm offers services that allow users to develop web or mobile applications
+Charts allows users to create dynamic data visualizations
+
+Compass can be used to connect to Atlas cluster
+*similar to Atlas data explorer but more options to query data
+*validation tab allows you to establish rules
