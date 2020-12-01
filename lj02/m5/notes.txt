@@ -40,5 +40,32 @@ limit(number)
 
  ex: db.zips.find().sort({ "pop": 1 }).limit(1)
 
- -------------------------------------------------------------------
- INDEXS
+-------------------------------------------------------------------
+INDEXES
+
+ Index is a collection stores a small portion of the collection's data set in a n easy to traverse form
+
+ db.<collection>.createIndex(<field1>: 1, <field2>: 1)
+ *multiple fields will sort documents in that order
+
+-------------------------------------------------------------------
+DATA MODELING
+
+Way to organize fields in a document to make application performance and querying easier
+
+RULE: Data is stored in the way that it is used
+
+-------------------------------------------------------------------
+UPSERT - UPDATE OR INSERT?
+
+db.<collection>.updateOne({query to locate},{<update>})
+
+db.<collection>.updateOne({query to locate},{<update>},{"upsert":true})
+*updates document if there is a matched
+*inserts the new data to document if no match
+
+ex: db.iot.updateOne({ "sensor": r.sensor, "date": r.date,
+                   "valcount": { "$lt": 48 } },
+                         { "$push": { "readings": { "v": r.value, "t": r.time } },
+                        "$inc": { "valcount": 1, "total": r.value } },
+                 { "upsert": true })
