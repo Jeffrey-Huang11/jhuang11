@@ -1,0 +1,44 @@
+Team 9+1 (Jeffrey Huang, Johnathan Lee, and Kelly Huang)
+SoftDev
+LJ02: Le Voyage de Learnination avec Mongo, Troisième Phase
+2020-11-25
+-------------------------------------------------------------------
+AGGREGATION FRAMEWORK
+
+Just another way to query data in MongoDB but better
+MQL syntax:
+db.listingsAndReviews.find(
+                { "amenities": "Wifi" },
+                { "price": 1, "address": 1, "_id": 0 }).pretty()
+
+Aggregation Framework syntax:
+db.listingsAndReviews.aggregate([
+                { "$match": { "amenities": "Wifi" } },
+                { "$project": { "price": 1, "address": 1, "_id": 0 }}]).pretty()
+*the commands in aggregate are INORDER, filtering from the 1st command to the next
+
+{ $project: {<field>:1 or 0, ...}},
+{ $group: { _id: "$field", <field1>: { <accumulator1> : <expression1> }, ... }}
+*takes incoming stream of data and siphons it into multiple distinct reservoirs
+
+"give_name": {"$sum" : 1}
+*adds all values of the given field to its specific field
+
+ex: db.listingsAndReviews.aggregate([
+                { "$project": { "address": 1, "_id": 0 }},
+                { "$group": { "_id": "$address.country", "count": { "$sum": 1 }}}])
+
+
+-------------------------------------------------------------------
+INDEXING AND AGGREGATION PIPELINE
+
+sort( {"field": number} )
+*number determines the order (-1) for decreasing and (1) for increasing
+
+limit(number)
+*number determines how many results are shown
+
+ ex: db.zips.find().sort({ "pop": 1 }).limit(1)
+
+ -------------------------------------------------------------------
+ INDEXS
