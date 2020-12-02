@@ -18,3 +18,5 @@ Replica Set - multiple machines storing same data to prevent any losses
 -------------------------------------------------------------------
 user: m001-student
 pass: m001-mongodb-basics
+
+mongo "mongodb+srv://sandbox.4itgc.mongodb.net/<dbname>" --username m001-student
