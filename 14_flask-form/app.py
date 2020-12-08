@@ -20,8 +20,8 @@ def disp_loginpage():
     print(request)
     print("***DIAG: request.args ***")
     print(request.args)
-    #print("***DIAG: request.args['username']  ***")
-    #print(request.args['username'])
+    #print("***DIAG: request.args['username']  ***") ; can't request an argument that isn't avaliable
+    #print(request.args['username'])  ; can't request an argument that isn't avaliable
     print("***DIAG: request.headers ***")
     print(request.headers)
     return render_template( 'login.html' )
@@ -36,7 +36,7 @@ def authenticate():
     print("***DIAG: request.args ***")
     print(request.args)
     print("***DIAG: request.args['username']  ***")
-    print(request.args['username'])
+    print(request.args['username'])  # now that arg 'username' is made/inputted, the request is valid
     print("***DIAG: request.headers ***")
     print(request.headers)
     name = request.args['username']
