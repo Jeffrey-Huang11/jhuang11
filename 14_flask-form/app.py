@@ -26,7 +26,7 @@ def disp_loginpage():
     print(request.headers)
     return render_template( 'login.html' )
 
-@app.route("/auth") # , methods=['GET', 'POST'])
+@app.route("/auth", methods=['GET', 'POST'])
 def authenticate():
     print("\n\n\n")
     print("***DIAG: this Flask obj ***")
@@ -40,7 +40,7 @@ def authenticate():
     print("***DIAG: request.headers ***")
     print(request.headers)
     name = request.args['username']
-    return render_template( 'response.html' , user = name)  #response to a form submission
+    return render_template( 'response.html' , user = name, method = request.method)  #response to a form submission
 
 
 if __name__ == "__main__": #false if this file imported as module
