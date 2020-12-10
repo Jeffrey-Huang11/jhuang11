@@ -35,12 +35,17 @@ def authenticate():
     print(request)
     print("***DIAG: request.args ***")
     print(request.args)
+
     print("***DIAG: request.args['username']  ***")
     print(request.args['username'])  # now that arg 'username' is made/inputted, the request is valid
     print("***DIAG: request.headers ***")
     print(request.headers)
+
     name = request.args['username']
-    return render_template( 'response.html' , user = name, method = request.method)  #response to a form submission
+    if name == "":
+        return ("Error not valid username")
+    else:
+        return render_template( 'response.html' , user = name, method = request.method)  #response to a form submission
 
 
 if __name__ == "__main__": #false if this file imported as module
