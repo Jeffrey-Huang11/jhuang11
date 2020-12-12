@@ -15,11 +15,15 @@ def disp_loginpage():
 
 @app.route("/welcome", methods=['GET', 'POST']) #, methods=['GET', 'POST'])
 def disp_welcomepage():
-    user = 'abracadabra'
-    password = '123456'
+    username = abracadabra
+    password = 123456
 
-    if request.args['username'] != user or request.args['password'] != password:
-            return ('Invalid Login Attempt. Please Try Again')
+    if request.args['username'] != username and request.args['password'] != password:
+        return ('Invalid Login Attempt. Bad juju Human (>-<) ')
+    if request.args['username'] != username:
+        return ('Invalid Login Attempt. Hint: Check your Username (>-<)')
+    if request.args['password'] != password:
+        return ('Invalid Login Attempt. Hint: Check your Password (>-<)')
 
     return render_template( 'welcome.html', user = request.args['username'])
 
