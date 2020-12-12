@@ -6,24 +6,32 @@
 from flask import Flask             #facilitate flask webserving
 from flask import render_template   #facilitate jinja templating
 from flask import request           #facilitate form submission
+from flask import sessions
+import secrets
 
 app = Flask(__name__)    #create Flask object
+secret_key = secrets.token_hex(16)
+app.secret_key= secret_key
 
 @app.route("/") #, methods=['GET', 'POST'])
 def disp_loginpage():
     return render_template( 'login.html' )
 
-@app.route("/welcome", methods=['GET', 'POST']) #, methods=['GET', 'POST'])
+@app.route("/", methods=['GET', 'POST']) #, methods=['GET', 'POST'])
 def disp_welcomepage():
-    username = abracadabra
-    password = 123456
+
+    username = 'abracadabra'
+    password = '123456'
 
     if request.args['username'] != username and request.args['password'] != password:
-        return ('Invalid Login Attempt. Bad juju Human (>-<) ')
+        return (''' <h1> Invalid Login Attempt. Bad juju Human \(^-^)/ </h1>
+                    <a href="http://127.0.0.1:5000/">Go Back</a> ''')
     if request.args['username'] != username:
-        return ('Invalid Login Attempt. Hint: Check your Username (>-<)')
+        return (''' <h1> Invalid Login Attempt. Hint: Check your Username (>-<) </h1>
+                   <a href="http://127.0.0.1:5000/">Go Back</a> ''')
     if request.args['password'] != password:
-        return ('Invalid Login Attempt. Hint: Check your Password (>-<)')
+        return (''' <h1> Invalid Login Attempt. Hint: Check your Password (>-<) </h1>
+                   <a href="http://127.0.0.1:5000/">Go Back</a> ''')
 
     return render_template( 'welcome.html', user = request.args['username'])
 
