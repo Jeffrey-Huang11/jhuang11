@@ -23,8 +23,8 @@ def disp_loginpage():
 
 @app.route("/auth") # , methods=['GET', 'POST'])
 def welcome():
-    username = "abcd"
-    password = "1234"
+    username = "abc"
+    password = "123"
     if request.args['username'] == username:
         if request.args['password'] == password:
             session["username"] = username
