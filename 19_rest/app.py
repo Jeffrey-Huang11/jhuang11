@@ -14,8 +14,7 @@ app = Flask(__name__)
 def root():
     nasa_key = open("key_nasa.txt").read()
     u = urllib.request.urlopen("https://api.nasa.gov/planetary/apod?api_key="+ nasa_key) #api key as file
-    response = u.read()
-    data = json.loads(response)
+    data = json.loads(u.read())
     return render_template("main.html", pic = data["url"], explanation = data["explanation"])
 
 if __name__ == "__main__":

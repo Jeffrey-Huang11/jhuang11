@@ -1,0 +1,9 @@
+# Team Jam Juice (Jonathan Lee, Jeffrey Huang)
+# SoftDev
+# K19 - - A RESTful Journey Skyward
+# 2021-04-05
+
+  > nasa_key = open("key_nasa.txt").read()
+  enables one to get the key and parse to string
+  > data = json.loads(u.read())
+  gets all the data in json that can be selected using data["query"]
