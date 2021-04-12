@@ -7,7 +7,7 @@ function factI(n) { //returns factorial of n, computed iteratively.
   for (i = n - 1; i > 0; i--) {
     n = n * i;
   }
-  return n
+  return n;
 }
 
 function factR(n) { //returns factorial of n, computed recursively.
