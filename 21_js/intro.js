@@ -4,6 +4,7 @@ K21 - - Get Scripty
 2021-04-09 */
 
 function factI(n) { //returns factorial of n, computed iteratively.
+  if (n == 0) return 1;
   for (i = n - 1; i > 0; i--) {
     n = n * i;
   }
