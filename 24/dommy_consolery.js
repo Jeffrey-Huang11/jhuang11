@@ -81,7 +81,7 @@ var removeItem = function(n) {
   var listitems = document.getElementsByTagName('li');
   listitems[n].remove();
 };
-// gets the list and removes (n+1) element
+// gets the list and removes (n+1)th element
 
 
 var red = function() {
@@ -115,13 +115,14 @@ var buttonCallback = function(e) {
 
 var b = document.getElementById('b');
 b.addEventListener('click', buttonCallback);
-// when button is clicked refer to butttonNallback
+// when button is clicked refer to butttonCallback
 
 var redCallback = function(e) {
   console.log("\n\n---redCallback invoked---")
   console.log(this);
   this.classList.add('red');
 }
+// tells the user that the element becomes red
 
 var thelist = document.getElementById("thelist");
 var litems = thelist.children;
@@ -136,3 +137,5 @@ for(var i = 0; i < litems.length; i++) {
     this.classList.toggle('blue');
   });
 }
+// whenever the user moves mouse across elements of the list, the location is printed
+// moving into an element makes it green, moving our makes it blue
