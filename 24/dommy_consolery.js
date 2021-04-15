@@ -29,10 +29,10 @@ var j = 20;
 
 //assign an anonymous fxn to a var
 var f = function(x) {
-  var j=30;
-  return j+x;
+  var j = 30;
+  return j + x;
 };
-
+// returns 30 plus input
 
 //instantiate an object
 var o = { 'name' : 'Thluffy',
@@ -43,27 +43,29 @@ var o = { 'name' : 'Thluffy',
             return x+30;
           }
         };
-
+// initialize an object to var o
 
 //(define fact (lambda (n) ...)
 var fact = function(n) {
-  var prod=1;
+  var prod = 1;
   for ( ; n > 1 ; n--){
     prod = prod * n;
   }
   return prod;
 };
+// factorial
 
 
 //(define fact (lambda (n) ...)
 var factR = function(n) {
-  if ( n<=1 ) {
+  if (n <= 1) {
     return 1;
   }
   else {
     return n * factR(n-1);
   }
 };
+// recursive factorial
 
 
 var addItem = function(text) {
@@ -72,12 +74,14 @@ var addItem = function(text) {
   newitem.innerHTML = text;
   list.appendChild(newitem);
 };
+// appends [text] to end of thelist
 
 
 var removeItem = function(n) {
   var listitems = document.getElementsByTagName('li');
   listitems[n].remove();
 };
+// gets the list and removes (n+1) element
 
 
 var red = function() {
@@ -86,6 +90,7 @@ var red = function() {
     items[i].classList.add('red');
   }
 };
+// gets list and for all non-blue elements makes text red
 
 
 var stripe = function() {
@@ -98,7 +103,7 @@ var stripe = function() {
     }
   }
 };
-
+// gets list and for even elements makes red and odd elements blue
 
 var buttonCallback = function(e) {
   console.log("\n\nhere comes e...");
@@ -106,11 +111,11 @@ var buttonCallback = function(e) {
   console.log("\n\nhere comes 'this'...");
   console.log(this);
 }
-
+// prints in console the text missing [this]???
 
 var b = document.getElementById('b');
 b.addEventListener('click', buttonCallback);
-
+// when button is clicked refer to butttonNallback
 
 var redCallback = function(e) {
   console.log("\n\n---redCallback invoked---")
