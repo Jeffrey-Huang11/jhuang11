@@ -6,7 +6,7 @@ K21 - - Get Scripty
 function factI(n) { //returns factorial of n, computed iteratively.
     if (n < 0) return "error, negative input";
     else if (n == 0) return 1;
-    for (var i = n - 1; i > 0; i--) {
+    for (i = n - 1; i > 0; i--) {
       n = n * i;
     }
     return n;
@@ -26,7 +26,7 @@ function factI(n) { //returns factorial of n, computed iteratively.
     if (n < 0) return "error, negative input";
     else if (n == 0) return 0;
     else if (n == 1) return 1;
-    for (var i = 1; i < n; i++) {
+    for (i = 1; i < n; i++) {
       ans = pri + sec;
       pri = sec;
       sec = ans;
