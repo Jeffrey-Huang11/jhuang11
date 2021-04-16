@@ -24,4 +24,3 @@ function gcd(a,b) {
   //You may want to create helper functions or external list variables here.
 
   //Do whatever you think is needed. Think: S I M P L E.   Think: S M A R T.
- 
