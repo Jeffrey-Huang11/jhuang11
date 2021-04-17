@@ -1,31 +1,13 @@
-/*
-   your PPTASK:
-
-   Test drive each bit of code in this file,
-    and insert comments galore, indicating anything
-     you discover,
-    	have questions about,
-    		or otherwise deem notable.
-
-    		Write with your future self or teammates in mind.
-
-    		If you find yourself falling out of flow mode, consult
-    		other teams
-    		MDN
-   A few comments have been pre-filled for you...
-
-   (delete this block comment once you are done)
-*/
-//YOUR HEADING HERE
-
+// Team Bubblegum Bears :: Arib Chowdhury, Jeffrey Huang
+// SoftDev pd1
+// K24: Settling in to your DOMicile
+// 2021-04-17
 
 //send diagnostic output to console
 //(Ctrl-Shift-J in Chromium & Firefox to reveal console)
 console.log("AYO");
-
 var i = "hello";
 var j = 20;
-
 
 //assign an anonymous fxn to a var
 var f = function(x) {
@@ -111,7 +93,7 @@ var buttonCallback = function(e) {
   console.log("\n\nhere comes 'this'...");
   console.log(this);
 }
-// prints in console the text missing [this]???
+// prints location of the button in the html file
 
 var b = document.getElementById('b');
 b.addEventListener('click', buttonCallback);
@@ -122,7 +104,7 @@ var redCallback = function(e) {
   console.log(this);
   this.classList.add('red');
 }
-// tells the user that the element becomes red
+// tells the user that the element set to red
 
 var thelist = document.getElementById("thelist");
 var litems = thelist.children;
@@ -137,5 +119,8 @@ for(var i = 0; i < litems.length; i++) {
     this.classList.toggle('blue');
   });
 }
-// whenever the user moves mouse across elements of the list, the location is printed
-// moving into an element makes it green, moving our makes it blue
+// 1) two default colors/shades of red and black
+// 2) Mousing in toggles the color green
+// 3) Mousing out toggles the color blue
+// 4) Clicking on a list item, sets (not toggles) the default color when blue and green aren’t toggled from black to red.ue
+// [this] refers to the object that the method is being invoked on in this case the list item(s)

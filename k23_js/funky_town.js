@@ -4,9 +4,6 @@
 // 2021-04-15
 // --------------------------------------------------
 
-//CARRY OVER YOUR BEST JS fxns here
-
-
 // ~~~ NEXT STEPS  ~~~
 // as a duo...
 // pair programming style
