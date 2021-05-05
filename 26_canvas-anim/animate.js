@@ -1,11 +1,11 @@
 //Team Bubblegum Bears (Jeffrey Huang, Arib Chowdhury)
 //SoftDev
-//K26 --
+//K26 -- They lock us in the tower whenever we get caught
 //2021-05-05
 
 // model for HTML5 canvas-based animation
 
-
+ 
 //access canvas and buttons via DOM
 var c =  document.getElementById("playground")// GET CANVAS
 var dotButton = document.getElementById("buttonCircle") // GET DOT BUTTON
