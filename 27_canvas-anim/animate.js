@@ -27,9 +27,10 @@ var radius = 0;
 var growing = true;
 var logo = new Image();
 logo.src = "logo_dvd.jpg";
-var xx = 25;
-var yy = 25;
-var collision = false;
+logo.onload = function(){ctx.drawImage(logo,190,210,120,80);}
+var loc = [190,210];
+var mv = [1,1];
+
 
 //var drawDot = function() {
 var drawDot = () => {
@@ -55,23 +56,21 @@ var stopIt = () => {
   console.log("stopIt invoked...")
   console.log( requestID );
   dotButton.disabled = false;
+  dvdButton.disabled = false;
   window.cancelAnimationFrame(requestID);
 };
 
 //var dvdIt = function() {
 var dvdIt = () => {
+  console.log("dvdIt invoked...")
+  dotButton.disabled = true;
+  dvdButton.disabled = true;
   clear();
-  window.cancelAnimationFrame(requestID);
-  ctx.drawImage(logo, xx, yy, 75, 50);
-  if (collision) {
-    xx-=2;
-    yy-=2;
-  }
-  else {
-    xx+=2;
-    yy+=2;
-    if (xx > 475) collision = true;
-  }
+  console.log(requestID);
+  loc = [loc[0]+mv[0],loc[1]+mv[1]];
+  ctx.drawImage(logo,loc[0],loc[1],120,80);
+  if (loc[0] == 0 | loc[0] == 380) mv[0] = -mv[0];
+  if (loc[1] == 0 | loc[1] == 420) mv[1] = -mv[1];
   requestID = window.requestAnimationFrame(dvdIt);
 }
 
