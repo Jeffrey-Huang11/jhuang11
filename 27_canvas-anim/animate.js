@@ -28,8 +28,8 @@ var growing = true;
 var logo = new Image();
 logo.src = "logo_dvd.jpg";
 logo.onload = function(){ctx.drawImage(logo,190,210,120,80);}
-var loc = [190,210];
-var mv = [1,1];
+var loc = [190,210]; // center of canvas (top left corner starts)
+var mv = [1,1]; // speed of 1 pixel in dirrection
 
 
 //var drawDot = function() {
