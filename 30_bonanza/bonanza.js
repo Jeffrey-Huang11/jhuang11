@@ -24,23 +24,26 @@ var apple = new Image();
 apple.src = "apple.jpg";
 apple.onload = function(){ctx.drawImage(apple,100,100,50,50)};
 
+var run = true;
 
 var runIt = () => {
-  setTimeout(function() {
+  if (run) {
     console.log("run invoked...")
     startButton.disabled = true;
     stopButton.disabled = false;
     restartButton.disabled = false;
-    ctx.clearRect(loc[0],loc[1],100,100); // clears previous snake head
-    loc = [loc[0]+mv[0],loc[1]+mv[1]]; // moving based on arrow press
     if (loc[0] < 0 || loc[0] > 950 || loc[1] < 0 || loc[1] > 950) {
       alert("You Died");
       restart();
       return;
     }
-    ctx.drawImage(snake,loc[0],loc[1],50,50);
-    requestID = window.requestAnimationFrame(runIt);
-  }, 1000);
+    setTimeout(function() {
+      ctx.clearRect(loc[0],loc[1],50,50); // clears previous snake head
+      loc = [loc[0]+mv[0],loc[1]+mv[1]]; // moving based on arrow press
+      ctx.drawImage(snake,loc[0],loc[1],50,50);
+      requestID = window.requestAnimationFrame(runIt);
+    }, 1000);
+  }
 }
 
 
@@ -48,27 +51,35 @@ document.onkeydown = checkKey;
 function checkKey(e) {
     e = e || window.event;
     if (e.keyCode == '38') { // up arrow
-
+      console.log("up...")
+      mv = [0,-50];
+      runIt;
     }
     else if (e.keyCode == '40') { // down arrow
-
+      console.log("down...")
+      mv = [0,50];
+      runIt;
     }
     else if (e.keyCode == '37') { // left arrow
-
+      console.log("left...")
+      mv = [-50,0];
+      runIt;
     }
     else if (e.keyCode == '39') { // right arrow
-
+      console.log("right...")
+      mv = [50,0];
+      runIt;
     }
-
 }
-
 
 var stopIt = () => {
     console.log("stopIt invoked...")
     console.log(requestID);
     startButton.disabled = false;
+    stopButton.disabled = true;
     window.cancelAnimationFrame(requestID);
-};
+    run = false;
+}
 
 var restart = () => {
     console.log("restart invoked...")
@@ -76,10 +87,15 @@ var restart = () => {
     ctx.drawImage(snake,500,500,50,50);
     ctx.drawImage(apple,100,100,50,50);
     loc = [500,500];
-    mv = [10,0]
+    mv = [50,0]
     startButton.disabled = false;
     stopButton.disabled = true;
     restartButton.disabled = true;
+    run = false;
+}
+
+document.getElementById('buttonStart').onclick = function() {
+  run = true;
 }
 
 startButton.addEventListener( "click", runIt);
