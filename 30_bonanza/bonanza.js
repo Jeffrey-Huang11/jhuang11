@@ -14,7 +14,7 @@ stopButton.disabled = true;
 restartButton.disabled = true;
 
 var loc = [500,500]; //location of snake head
-var mv = [50,50]; //velocity
+var mv = [50,0]; //velocity
 
 var snake = new Image();
 snake.src = "snake.jpg";
@@ -25,32 +25,23 @@ apple.src = "apple.jpg";
 apple.onload = function(){ctx.drawImage(apple,100,100,50,50)};
 
 
-loc = [loc[0]+mv[0],loc[1]]; //moving to left when starting
-
 var runIt = () => {
-  console.log("run invoked...")
-  startButton.disabled = true;
-  stopButton.disabled = false;
-  restartButton.disabled = false;
-  ctx.clearRect(loc[0],loc[1],100,100); // clears previous snake head
-  if (loc[0] < 0 | loc[0] > 1000) {
-    alert("You Died");
-    restart();
-    return;
-  }
-  if (loc[1] < 0 | loc[1] > 1000) {
-    alert("You Died");
-    restart();
-    return;
-  }
-  ctx.drawImage(snake,loc[0],loc[1],50,50);
-  requestID = window.requestAnimationFrame(runIt);
-};
-
-c.addEventListener('keydown', function(event) {
-  const key = event.key; // "ArrowRight", "ArrowLeft", "ArrowUp", or "ArrowDown"
-
-});
+  setTimeout(function() {
+    console.log("run invoked...")
+    startButton.disabled = true;
+    stopButton.disabled = false;
+    restartButton.disabled = false;
+    ctx.clearRect(loc[0],loc[1],100,100); // clears previous snake head
+    loc = [loc[0]+mv[0],loc[1]+mv[1]]; // moving based on arrow press
+    if (loc[0] < 0 || loc[0] > 950 || loc[1] < 0 || loc[1] > 950) {
+      alert("You Died");
+      restart();
+      return;
+    }
+    ctx.drawImage(snake,loc[0],loc[1],50,50);
+    requestID = window.requestAnimationFrame(runIt);
+  }, 1000);
+}
 
 
 document.onkeydown = checkKey;
@@ -84,11 +75,13 @@ var restart = () => {
     ctx.clearRect(0,0,1000,1000);
     ctx.drawImage(snake,500,500,50,50);
     ctx.drawImage(apple,100,100,50,50);
+    loc = [500,500];
+    mv = [10,0]
     startButton.disabled = false;
     stopButton.disabled = true;
     restartButton.disabled = true;
 }
 
-
 startButton.addEventListener( "click", runIt);
 stopButton.addEventListener( "click", stopIt);
+restartButton.addEventListener( "click", restart);
