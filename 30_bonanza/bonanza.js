@@ -24,13 +24,15 @@ var apple = new Image();
 apple.src = "apple.jpg";
 apple.onload = function(){ctx.drawImage(apple,100,100,50,50)};
 
+
+loc = [loc[0]+mv[0],loc[1]]; //moving to left when starting
+
 var runIt = () => {
   console.log("run invoked...")
   startButton.disabled = true;
   stopButton.disabled = false;
   restartButton.disabled = false;
   ctx.clearRect(loc[0],loc[1],100,100); // clears previous snake head
-  loc = [loc[0]+mv[0],loc[1]]; //moving to left when starting
   if (loc[0] < 0 | loc[0] > 1000) {
     alert("You Died");
     restart();
