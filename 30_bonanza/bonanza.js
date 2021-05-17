@@ -14,17 +14,29 @@ stopButton.disabled = true;
 restartButton.disabled = true;
 
 var loc = [500,500]; //location of snake head
+var goal = [100,100]; //location of apple
 var mv = [50,0]; //velocity
+var counter = 0;
 
 var snake = new Image();
 snake.src = "snake.jpg";
-snake.onload = function(){ctx.drawImage(snake,500,500,50,50)};
+snake.onload = function(){ctx.drawImage(snake,loc[0],loc[1],50,50)};
 
 var apple = new Image();
 apple.src = "apple.jpg";
-apple.onload = function(){ctx.drawImage(apple,100,100,50,50)};
+apple.onload = function(){ctx.drawImage(apple,goal[0],goal[1],50,50)};
 
 var run = true;
+
+var appleIt = () => {
+  goal[0] = Math.floor(Math.random() * 10) * 100;
+  goal[1] = Math.floor(Math.random() * 10) * 100;
+  if (loc[0] == goal[0] && loc[1] == goal[1]) {
+    appleIt();
+    return;
+  }
+  ctx.drawImage(apple,goal[0],goal[1],50,50);
+}
 
 var runIt = () => {
   if (run) {
@@ -33,9 +45,13 @@ var runIt = () => {
     stopButton.disabled = false;
     restartButton.disabled = false;
     if (loc[0] < 0 || loc[0] > 950 || loc[1] < 0 || loc[1] > 950) {
-      alert("You Died");
+      alert("You Died, Your Score Was: " + counter);
       restart();
       return;
+    }
+    if (loc[0] == goal[0] && loc[1] == goal[1]) {
+      appleIt();
+      counter+=1;
     }
     setTimeout(function() {
       ctx.clearRect(loc[0],loc[1],50,50); // clears previous snake head
@@ -84,10 +100,12 @@ var stopIt = () => {
 var restart = () => {
     console.log("restart invoked...")
     run = false;
+    counter = 0;
     ctx.clearRect(0,0,1000,1000);
     ctx.drawImage(snake,500,500,50,50);
     ctx.drawImage(apple,100,100,50,50);
     loc = [500,500];
+    goal = [100,100];
     mv = [50,0]
     startButton.disabled = false;
     stopButton.disabled = true;
