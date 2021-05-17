@@ -42,7 +42,7 @@ var runIt = () => {
       loc = [loc[0]+mv[0],loc[1]+mv[1]]; // moving based on arrow press
       ctx.drawImage(snake,loc[0],loc[1],50,50);
       requestID = window.requestAnimationFrame(runIt);
-    }, 1000);
+    }, 800);
   }
 }
 
@@ -83,6 +83,7 @@ var stopIt = () => {
 
 var restart = () => {
     console.log("restart invoked...")
+    run = false;
     ctx.clearRect(0,0,1000,1000);
     ctx.drawImage(snake,500,500,50,50);
     ctx.drawImage(apple,100,100,50,50);
@@ -91,7 +92,6 @@ var restart = () => {
     startButton.disabled = false;
     stopButton.disabled = true;
     restartButton.disabled = true;
-    run = false;
 }
 
 document.getElementById('buttonStart').onclick = function() {
